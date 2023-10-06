@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/denialromeo/3412-chess-problems.git"
+    "url": "git+https://github.com/Gaspart64/4462-chess-problems.git"
   },
   "author": "Daniel Moore",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/denialromeo/3412-chess-problems/issues"
+    "url": "https://github.com/Gaspart64/4462-chess-problems/issues"
   },
   "homepage": "https://github.com/denialromeo/3412-chess-problems#readme",
   "dependencies": {
