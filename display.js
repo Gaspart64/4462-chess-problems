@@ -10,7 +10,7 @@ let url_parameters = getUrlParameters();
 
 const TOTAL_PROBLEMS = 4462;
 const HIGHLIGHT_COLORS = {
-  black: "#d248ac",
+  black: "#696969",
   white: "#a9a9a9"
 };
 
