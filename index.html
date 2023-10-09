@@ -1,30 +1,271 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Chess Puzzle Player</title>
-    </head>
-    <body>
-        <center>
-        <iframe style='width:100%; height:621px;'
- src='https://www.apronus.com/chess/puzzle/?p=08X1p6Xp3pk2X5nR1X8XP3rN2X1P3KP1X8_w_-_-_0_1&N=0&w=alqs-ee-odrg-tro&h=%3Ch3%3EWhite%20to%20play.%3C%2Fh3%3E'>
 
-[Event "Chessboard Editor at Apronus.com"]
-[Site "https://www.apronus.com/chess/puzzle/editor.php"]
-[Date "2023.10.09"]
-[Round "-"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[SetUp "1"]
-[FEN "8/1p6/p3pk2/5nR1/8/P3rN2/1P3KP1/8 w - - 0 1"]
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-1.Rxf5+ (1.Nd4 (1.Rg6+ (1.g4 Rxf3+ 2.Kxf3 Kxg5) 1...Kxg6) 1...Kxg5 2.Nxf5 Rb3) 
-1...exf5 2.Kxe3 *
+<link rel='canonical' href='https://www.apronus.com/chess/puzzles/'>
 
 
-</iframe>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        </center>
- 
-    </body>
+  ga('create', 'UA-90959-2', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+
+<title>Chess Puzzles > Mate in 1 &gt; Games</title>
+<meta name="description" content="Interactive chessboard replies to all moves.">
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.apronus.com/chess/puzzles/mate-in-1/" />
+<meta property="og:title" content="Chess Puzzles > Mate in 1 &gt; Games" />
+<meta property="og:description" content="Interactive chessboard replies to all moves." />
+
+<script>
+function galuj(category,action,label)
+{
+ var gastring = "ga('send', 'event', '" + category + "', '" + action + "', '" + label + "');";
+ eval(gastring);
+ console.log(gastring);
+}
+function gasendevent(action,label) { return "ga('send', 'event', '" + 'Wizboard' + "', '" + action + "', '" + label + "');"; }
+function evallog(gastring) { eval(gastring); console.log(gastring); }
+function galog(action,label) { evallog(gasendevent(action,label)); }
+function threshold(n) { var log8ile = Math.log(n)/Math.log(8); return (log8ile == Math.floor(log8ile)); }
+</script>
+</head>
+
+<body>
+
+<nav id='nav'>
+<a href='https://www.apronus.com/'>Apronus.com</a> &gt;
+<a href='https://www.apronus.com/chess/puzzles/'>Chess Puzzles</a> &gt;
+<b>Mate in 1</b> &gt; Games</nav>
+
+<script>
+document.body.style.margin = '0';
+document.body.style.padding = '0';
+document.body.style.fontFamily = 'Verdana';
+document.body.style.color = 'black';
+document.body.style.background = 'white';
+document.body.style.overflow = 'hidden';
+var nav = document.querySelector('nav');
+nav.style.lineHeight = '1.5';
+nav.style.margin = '0';
+nav.style.padding = '4px';
+nav.style.textAlign = 'left';
+nav.style.overflow = 'hidden';
+var nava = nav.querySelectorAll('a');
+for (var i=0; i < nava.length; i++)
+{
+	nava[i].style.whiteSpace = 'nowrap';
+	nava[i].target = '_top';
+}
+nav.style.fontSize = '100%';
+nav.style.height = '24px';
+function adjust_nav_fontsize()
+{
+	var a = document.getElementById('nav');
+	if (a.scrollHeight <= a.clientHeight && a.scrollWidth <= a.clientWidth) return;
+	var fontsize = parseInt(a.style.fontSize);
+	a.style.fontSize = (fontsize-1) + '%';
+	setTimeout(adjust_nav_fontsize,1);
+}
+setTimeout(adjust_nav_fontsize,0);	
+</script>
+
+<script src='https://www.apronus.com/chess/wizboard/wizboard-js.php'></script>
+
+<script>
+var ileich = 'ileich';
+var items = [];
+items.push({source: "Maxim%20Rodshtein%20vs%20Ian%20Nepomniachtchi%2C%20Natanya%2C%202009", FEN: "6r1/p6k/Bp3n1r/2pP1P2/P4q1P/2P2Q2/5K2/2R2R2 b - - 0 1", solution: "1... Ne4+ 2. Ke1 Qd2# "});
+items.push({source: "Johannes%20Zukertort%20vs%20Adolf%20Anderssen%2C%20Breslau%2C%201865", FEN: "r1b2k1r/ppp1bppp/8/1B1Q4/5q2/2P5/PPP2PPP/R3R1K1 w - - 0 1", solution: "1. Qd8+ Bxd8 2. Re8# "});
+items.push({source: "Jon%20Hammer%20vs%20Shakil%20Abu%20Sufian%2C%20Dresden%2C%202008", FEN: "1Q6/r3R2p/k2p2pP/p1q5/Pp4P1/5P2/1PP3K1/8 w - - 0 1", solution: "1. Rxa7+ Qxa7 2. Qb5#"});
+items.push({source: "Petr%20Virostko%20vs%20Levon%20Aronian%2C%20Verdun%2C%201995", FEN: "8/2P2pk1/3Q4/4pq2/7p/6pP/2r3P1/6RK b - - 0 1", solution: "1... Qxh3+ 2. gxh3 Rh2#"});
+items.push({source: "David%20Howell%20vs%20Aljoscha%20Feuerstack%2C%20Germany%2C%2010%2F20%2F2012", FEN: "k2r4/ppRn2p1/6p1/1P3p2/3p1B2/6P1/P4PBP/4n1K1 w - - 0 1", solution: "1. Bxb7+ Kb8 2. Rxd7#"});
+items.push({source: "Samuel%20Reshevsky%20vs%20Yasuji%20Matsumoto%2C%20Siegen%2C%201970", FEN: "r3rknQ/1p1R1pb1/p3pqBB/2p5/8/6P1/PPP2P1P/4R1K1 w - - 0 1", solution: "1. Qxg7+ Qxg7 2. Rxf7# "});
+items.push({source: "Cristina%20Iosif%20vs%20Almira%20Skripchenko%2C%20Rumania%2C%201992", FEN: "4r1k1/pQ3pp1/7p/4q3/4r3/P7/1P2nPPP/2BR1R1K b - - 0 1", solution: "1... Qxh2+ 2. Kxh2 Rh4# "});
+var symmetry = 'random';
+var include_h6 = false;
+function mate1_nextset_URL() { return 'reload'; }
+function avoid1_nextset_URL() { return 'reload'; }console.log('ileich = '+ileich);
+</script>
+
+<table id='tabla'><tr>
+<td id='iframetd'></td><td id='adtd'>
+<div id='addiv'></div></td>
+</tr></table>
+
+<script>
+function guess_gallery_width()
+{
+	if (window.innerWidth < 1000) return 0;
+ var overhead = 135;
+ var topp = 16, bottom = 16, left = 8, right = 0;
+ var PanelWidth = 19*16; // originally 19em
+ var gap = 16; // originally 1em, gap between chessboard and panel, between buttons and movelist
+ var w = (window.innerWidth - (left+right+1)) - PanelWidth - gap - 7; // last number is for good measure, it doesn't work without it
+ var h = window.innerHeight - overhead; //h -= computedmargin(el('h1header'));
+ var size = (w < h) ? w : h;
+ //size = resizeboard(size); // returns the computed size
+ var galw = w - size - 30; // originally gap was 30 here
+ return (galw > 121) ? galw : 121;
+}
+
+const galw = guess_gallery_width();
+const ad_bottom_margin = (galw === 0) ? 51 : 0;
+
+function sizetabla(galw)
+{
+	tabla.style.width = '100%';
+	tabla.style.padding = '0';
+	var height = (window.innerHeight - el('nav').clientHeight - 8 - ad_bottom_margin) + 'px'
+	tabla.style.height = height; iframetd.style.height = height; adtd.style.height = height; addiv.style.height = height;
+	iframetd.style.minWidth = (window.innerWidth - galw - 1) + 'px';
+	adtd.style.minWidth = galw + 'px';
+	adtd.style.background = '#fafafa';
+	adtd.style.padding = '0';
+	iframetd.style.padding = '0';
+	iframetd.style.verticalAlign = 'top';
+	addiv.style.width = galw + 'px';
+	adtd.style.overflow = 'hidden';
+	if (galw == 0) adtd.style.display = 'none';
+}
+
+sizetabla(galw);
+
+function tag_head_adsense() { return '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></sc'+'ript>'; }
+function tag_vertical_adsense() 
+{
+	return '<ins class="adsbygoogle"' +
+	'     style="display:block"' +
+	'     data-ad-client="ca-pub-5700139411406455"' +
+	'     data-ad-slot="7787310007"' +
+	'     data-ad-format="auto"' +
+	'     data-full-width-responsive="true"></ins>';
+}
+function insert_tag_adsense()
+{
+	document.write(tag_head_adsense());
+	el('addiv').innerHTML = tag_vertical_adsense();
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	console.log('AdSense loaded');
+}
+
+
+function resizeframka()
+{
+	var framka = el('framka');
+	var height = window.innerHeight;
+	var navheight = el('nav').clientHeight;
+	framka.style.height = (height - navheight - 8 - ad_bottom_margin) + 'px';
+	framka.style.resize = 'none';
+}
+
+function auto_puzzleset_title()
+{
+	if (items && items.length < 7) return '';
+	var Random = 'Random';
+	if (isPolish()) Random = 'Losowe';
+	if (isRussian()) Random = 'Случайные';
+	return Random + ' ' + (puzzleset.length-1) + ':';
+}
+
+
+var framka = newel('iframe'); framka.id = 'framka';
+iframetd.appendChild(framka); //document.body.appendChild(framka);
+framka.style.width = '100%';
+framka.style.margin = '0';
+framka.style.overflow = 'hidden';
+resizeframka();
+window.addEventListener("resize", resizeframka );
+setCookieMinutes('symmetry',symmetry,7/60); // seven seconds
+var wizboardpath = 'https://www.apronus.com/chess/wizboard/';
+var gallery = null;
+var variant = null;
+var nextpuzzleset = 'reload';
+//prepare puzzleset and nextpuzzleset
+
+if (puzzleset) // chesthetica readyJS generates var puzzleset
+{
+	var items = [1,2,3,4,5,6,7];
+	// this is needed by auto_puzzleset_title()
+}
+else
+{
+	// mate-in-2-all readyJS generates var items
+	items = mate2_filteritems(items);
+	if (items.length == 0) alert('Error. Corrupt position given.');
+	else
+	{
+		var _mode = 'mate1games';		if (_mode == 'mate1problems')
+		{
+			var nextpuzzleset = mate1_nextset_URL(); //'reload';
+			var puzzleset = mate1_items2puzzleset(items);//mate1_item2puzzleset(items[0]);
+			if (puzzleset.length < 2) { console.log('No mate in 1 puzzleset.'); }
+		}
+		else if (_mode == 'avoid1problems')
+		{
+			var nextpuzzleset = avoid1_nextset_URL(); //'reload';
+			if (items.length == 1)
+			{
+				var max_ile_ruchow = 100;
+				var puzzleset = avoid1_item2puzzleset(items[0],max_ile_ruchow);
+			}
+			else
+			{
+				var max_ile_ruchow = 1;
+				var puzzleset = items2puzzleset_avoid(items,max_ile_ruchow);
+			}
+			if (puzzleset == null || puzzleset.length <= 1) { alert('Nothing interesting found in this position.'); }
+		}
+		else if (_mode == 'mate2games' || _mode == 'mate2problems')
+		{
+			var puzzleset = mate2_items2puzzleset(items,include_h6);
+			if (puzzleset.length < 2) { alert('Nothing found.'); }
+		}
+		else if (_mode == 'mate1games')
+		{
+			var puzzleset = mate1games_items2puzzleset(items);
+		}
+		else if (_mode == 'avoid1games')
+		{
+			var puzzleset = fromgames_avoid1_items_to_puzzleset(items);
+		}
+		else
+		{
+			alert('_mode is not defined');// tutaj leci puzzle-index.php
+		}
+	}	
+}
+
+if (puzzleset == null || puzzleset.length <= 1) {}
+else
+{
+	var polishtitle = auto_puzzleset_title();
+	var englishtitle = auto_puzzleset_title();
+	var russiantitle = auto_puzzleset_title();
+	initpuzzleiframe(framka,wizboardpath,puzzleset,puzzle,gallery,nextpuzzleset,polishtitle,englishtitle,russiantitle,variant);
+}
+
+
+if (ad_bottom_margin > 0 || galw > 160)
+{
+	const div = newel('div');
+	div.id = 'bottomad';
+	div.style.height = (ad_bottom_margin > 0) ? '50px' : '0px';
+	div.style.overflow = 'hidden';
+	document.body.append(div);
+	setTimeout("insert_vdo_tag_bapronus(el('bottomad'));",10);
+}
+</script>
+
+</body> 
 </html>
