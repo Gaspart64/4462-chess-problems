@@ -4,26 +4,21 @@
         <title>Chess Puzzle Player</title>
     </head>
     <body>
-       <iframe style='width:100%; height:621px;'
- src='https://www.apronus.com/chess/puzzle/?p=08X1p6Xp3pk2X5nR1X8XP3rN2X1P3KP1X8_w_-_-_0_1&N=0&w=alqs-ee-odrg-tro&h=%3Ch3%3EWhite%20to%20play.%3C%2Fh3%3E'>
+        <center>
+        <h2 id="problem-title" style="font-family:Helvetica"></h2>
+        <div id="board" style="width:436px;height:0;padding-bottom:436px"></div>
+        <br>
+        <input type="button" id="hint-btn" value="Hint" />
+        <input type="button" id="next-btn" style="display:none" value="Next" />
+        </center>
+        <center>
+        <p style="font-family:Helvetica">
+            Above is a problem <span id="problem-num"></span> from Polgár's book. <a id="problem-link" target="_self">Here</a> is a link to return to it in the future.
+        </p>
+            <p style="font-family:Helvetica">
+            <a <a href="https://gaspart64.github.io/4462-chess-problems/?id=1"> start at problem 1</a>
+        </center>
 
-[Event "Chessboard Editor at Apronus.com"]
-[Site "https://www.apronus.com/chess/puzzle/editor.php"]
-[Date "2023.10.08"]
-[Round "-"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[SetUp "1"]
-[FEN "8/1p6/p3pk2/5nR1/8/P3rN2/1P3KP1/8 w - - 0 1"]
-
-1.Rxf5+ (1.Nd4 (1.Rg6+ (1.g4 Rxf3+ 2.Kxf3 Kxg5) 1...Kxg6) 1...Kxg5 2.Nxf5 Rb3) 
-1...exf5 2.Kxe3 *
-
-
-</iframe>
-
-
-        
+        <script src="dist/chess-puzzle-player.js"></script>
     </body>
 </html>
