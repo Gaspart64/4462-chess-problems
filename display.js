@@ -168,6 +168,40 @@ function next(problem = random.choice(problems), useAnimation = true) {
     highlight(target);
   };
 }
+// Add this code snippet to your existing script
+
+// Event handler for piece click (source selection)
+function onPieceClick(square) {
+  // Highlight the selected piece (source square)
+  highlight(square);
+}
+
+// Event handler for square click (target selection)
+function onSquareClick(square) {
+  // Check if the selected move is legal
+  const { source, target } = parse_move(correct_moves[0]);
+  if (square === target) {
+    // If the target square matches the expected move, make the move
+    make_move();
+  } else {
+    // Otherwise, unhighlight and provide feedback (optional)
+    unhighlight();
+    console.log("Invalid move. Try again.");
+  }
+}
+
+// Attach event listeners to squares
+$(".square-55d63").on("click", function() {
+  const square = $(this).data("square");
+  if (correct_moves.length > 0) {
+    // If there are remaining correct moves, handle piece selection
+    onPieceClick(square);
+  } else {
+    // Otherwise, handle square selection
+    onSquareClick(square);
+  }
+});
+
 
 function init() {
   const problem = ("id" in url_parameters && url_parameters["id"] <= TOTAL_PROBLEMS && url_parameters["id"] > 0) ? problems[url_parameters["id"] - 1] : random.choice(problems);
